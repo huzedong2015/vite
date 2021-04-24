@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "build": "vue-tsc --noEmit --skipLibCheck && vite build",
+    "serve": "vite preview",
+    "lint": "eslint --fix --ext .ts --ext .vue --ext .js src/"
   },
   "dependencies": {
     "axios": "^0.21.1",
