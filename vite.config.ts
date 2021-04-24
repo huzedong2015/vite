@@ -7,6 +7,7 @@ export default defineConfig({
    base: "/baidu",
    resolve: {
       alias: {
+         "@": "./src",
       },
    },
    plugins: [

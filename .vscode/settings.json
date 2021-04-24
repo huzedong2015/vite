@@ -5,7 +5,7 @@
 	},
 	"editor.tabSize": 3,
 	"editor.codeActionsOnSave": {
-		// "source.fixAll": true, /* 保存后自动修复 */
+		"source.fixAll": true, /* 保存后自动修复 */
 	},
 
 	"editor.defaultFormatter": "esbenp.prettier-vscode"
