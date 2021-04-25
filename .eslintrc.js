@@ -24,6 +24,8 @@ module.exports = {
       // 空格缩进
       indent: ["error", 3, { SwitchCase: 1 }],
 
+      "linebreak-style": "off",
+
       "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
 
       // 只有一个导出时使用默认导出
