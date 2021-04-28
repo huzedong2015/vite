@@ -1,4 +1,4 @@
-import { reactive } from "vue";
+import { reactive, toRefs } from "vue";
 
 export interface UserInfo {
    /** 用户名 */
@@ -9,14 +9,20 @@ export interface UserInfo {
 
 export interface State {
    /** 用户信息 */
-   userinfo: UserInfo
+   userInfo: UserInfo
 }
 
 export const state = reactive<State>({
-   userinfo: {
+   userInfo: {
       userName: "Huzedong",
-      age: 30
-   }
+      age: 30,
+   },
 });
 
-const 
+export function action(sta: UserInfo) {
+   state.userInfo = sta;
+}
+
+export function userState() {
+   return toRefs(state);
+}
