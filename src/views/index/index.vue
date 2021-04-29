@@ -9,7 +9,8 @@ import { userState } from "../../state";
 export default defineComponent({
    name: "PageIndex",
    setup() {
-      const { userInfo } = userState();
+      const { state } = userState();
+      const { userInfo } = state;
 
       return {
          userInfo,

@@ -1,28 +1,12 @@
-import { reactive, toRefs } from "vue";
+import { toRefs } from "vue";
+import { state } from "./src/state";
+import { createActions } from "./src/actions";
 
-export interface UserInfo {
-   /** 用户名 */
-   userName: string;
-   /** 年龄 */
-   age: number;
-}
-
-export interface State {
-   /** 用户信息 */
-   userInfo: UserInfo
-}
-
-export const state = reactive<State>({
-   userInfo: {
-      userName: "Huzedong",
-      age: 30,
-   },
-});
-
-export function action(sta: UserInfo) {
-   state.userInfo = sta;
-}
+const action = createActions(state);
 
 export function userState() {
-   return toRefs(state);
+   return {
+      state: toRefs(state),
+      action,
+   };
 }

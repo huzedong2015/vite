@@ -24,6 +24,9 @@ module.exports = {
       // 空格缩进
       indent: ["error", 3, { SwitchCase: 1 }],
 
+      // 禁止修改参数
+      "no-param-reassign": "off",
+
       "linebreak-style": "off",
 
       "import/no-extraneous-dependencies": ["error", { devDependencies: true }],

@@ -6,15 +6,16 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { userState, action } from "../../state";
+import { userState } from "../../state";
 
 export default defineComponent({
    name: "PageIndex",
    setup() {
-      const { userInfo } = userState();
+      const { state, action } = userState();
+      const { userInfo } = state;
 
       function update() {
-         action({
+         action.updateUserInfo({
             userName: "胡泽东",
             age: Math.floor(Math.random() * 1000),
          });
