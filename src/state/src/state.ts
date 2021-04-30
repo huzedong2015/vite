@@ -9,12 +9,20 @@ export interface UserInfo {
 
 export interface State {
    /** 用户信息 */
-   userInfo: UserInfo
+   userInfo: UserInfo | {};
+   /** token */
+   token: String | null;
 }
 
-export const state = reactive<State>({
-   userInfo: {
-      userName: "Huzedong",
-      age: 30,
-   },
+const state:State = ({
+   userInfo: {},
+   token: "",
 });
+
+/**
+ * 创建state
+ * @returns
+ */
+export function createState():State {
+   return reactive(state);
+}

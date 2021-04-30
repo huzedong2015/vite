@@ -1,5 +1,5 @@
 <template>
-   <h1>{{ userInfo }}</h1>
+   <h1>{{ state.userInfo }}</h1>
 </template>
 
 <script lang="ts">
@@ -10,10 +10,13 @@ export default defineComponent({
    name: "PageIndex",
    setup() {
       const { state } = userState();
-      const { userInfo } = state;
+
+      setTimeout(() => {
+
+      });
 
       return {
-         userInfo,
+         state,
       };
    },
 });

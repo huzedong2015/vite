@@ -1,12 +1,14 @@
-import { toRefs } from "vue";
-import { state } from "./src/state";
+import { readonly } from "vue";
+import { createState } from "./src/state";
 import { createActions } from "./src/actions";
 
+const state = createState();
 const action = createActions(state);
 
 export function userState() {
-   return {
-      state: toRefs(state),
+   const store = {
+      state: readonly(state),
       action,
    };
+   return store;
 }

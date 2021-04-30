@@ -1,5 +1,5 @@
 <template>
-  <h2>{{ userInfo }}</h2>
+  <h2>{{ state.userInfo }}</h2>
 
   <button @click="update">update</button>
 </template>
@@ -12,7 +12,6 @@ export default defineComponent({
    name: "PageIndex",
    setup() {
       const { state, action } = userState();
-      const { userInfo } = state;
 
       function update() {
          action.updateUserInfo({
@@ -22,7 +21,7 @@ export default defineComponent({
       }
 
       return {
-         userInfo,
+         state,
          update,
       };
    },
